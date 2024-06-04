@@ -114,6 +114,14 @@ execute:
     -   Prettier
     -   Live Share
 
-## Interface do R no VSCode
+## Interface do R no VSCode e exemplos
 
 ![](images/paste-3.png){fig-align="center" width="541"}
+
+
+## Contato
+
+-   Marcus Ramalho:
+    -   [GitHub](https://github.com/nextmarte)
+    -   E-mail: marcusantonio@id.uff.br
+    -   linkedin: [Marcus Ramalho](https://www.linkedin.com/in/marcus-ramalho-8a440545/)

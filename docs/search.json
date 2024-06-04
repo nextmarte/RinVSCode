@@ -77,10 +77,17 @@
     "text": "Do que precisamos?\n\nR Instalado\nVisual Studio Code\nPacote languageserversetup - Recursos de LSP para R permitindo integração com VSCode\nPacote httpgd - Para visualização de gráficos\nSetup dos atalhos\nSetup dos snippets\nExtensões\n\nR\nQMD\nRMD\nCopilot/Tabnine\nPrettier\nLive Share"
   },
   {
-    "objectID": "apresentacao.html#interface-do-r-no-vscode",
-    "href": "apresentacao.html#interface-do-r-no-vscode",
+    "objectID": "apresentacao.html#interface-do-r-no-vscode-e-exemplos",
+    "href": "apresentacao.html#interface-do-r-no-vscode-e-exemplos",
     "title": "Desbloqueie o Poder do R com VSCode:  Um Guia Prático para Iniciantes e Especialistas",
-    "section": "Interface do R no VSCode",
-    "text": "Interface do R no VSCode\n\n\n\n\n\n\n\n\n\nPPGAd Universidade Federal Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
+    "section": "Interface do R no VSCode e exemplos",
+    "text": "Interface do R no VSCode e exemplos"
+  },
+  {
+    "objectID": "apresentacao.html#contato",
+    "href": "apresentacao.html#contato",
+    "title": "Desbloqueie o Poder do R com VSCode:  Um Guia Prático para Iniciantes e Especialistas",
+    "section": "Contato",
+    "text": "Contato\n\nMarcus Ramalho:\n\nGitHub\nE-mail: marcusantonio@id.uff.br\nlinkedin: Marcus Ramalho\n\n\n\n\n\n\nPPGAd Universidade Federal Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
   }
 ]
