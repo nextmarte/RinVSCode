@@ -6,14 +6,23 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: Início
+        icon: house
+      - href: apresentacao.qmd
+        text: Apresentação
+        icon: file-slides
+      - href: https://github.com/nextmarte/RinVSCode
+        text: GitHub
+        icon: github
+
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
-    toc: true
+    theme:
+      light: flatly
+      dark: darkly
+
+css: styles.css
 
 
 

@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "index.html#tudo-pronto",
+    "href": "index.html#tudo-pronto",
+    "title": "VIII SER - R no VSCODE",
+    "section": "Tudo Pronto",
+    "text": "Tudo Pronto\nA patir deste ponto você já pode começar a usar o R no VSCode, porém, se você quiser mais dicas e truques para melhorar a sua produtividade, continue lendo."
+  },
+  {
+    "objectID": "index.html#atalhos-do-rstudio-no-vscode",
+    "href": "index.html#atalhos-do-rstudio-no-vscode",
+    "title": "VIII SER - R no VSCODE",
+    "section": "Atalhos do RStudio no VSCode",
+    "text": "Atalhos do RStudio no VSCode\nTodos os atalhos do RStudio podem ser usados, porém vamos precisar configurar o keybindings.json para isso. Cole o código abaixo no seu keybindings.json para usar os atalhos do RStudio no VSCode.\n\n\n\nkeybindings.json\n\n\n[\n  {\n    \"key\": \"alt+-\",\n    \"command\": \"type\",\n    // \"when\": \"editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus\",\n    // if you want using quarto, try this\n    \"when\": \"editorLangId =~ /r|rmd|qmd/ && editorTextFocus\",\n    \"args\": {\"text\": \" &lt;- \"}\n  },\n  {\n    \"key\": \"ctrl+shift+m\",\n    \"command\": \"type\",\n    // \"when\": \"editorLangId == r && editorTextFocus || editorLangId == rmd && editorTextFocus\",\n    \"when\": \"editorLangId =~ /r|rmd|qmd/ && editorTextFocus\",\n    \"args\": {\"text\": \" %&gt;% \"}\n  },\n  {\n    \"key\": \"ctrl+shift+m\",\n    \"command\": \"-workbench.actions.view.problems\"\n  },\n\n  // input indicative of r markdown code chunk\n  {\n    \"key\": \"ctrl+shift+i\",\n    \"command\": \"editor.action.insertSnippet\",\n    // \"when\": \"editorTextFocus && editorLangId == 'rmd'\",\n    \"when\": \"editorLangId =~ /r|rmd|qmd/ && editorTextFocus\",\n    \"args\": {\n        \"snippet\": \"```{r}\\n${TM_SELECTED_TEXT}$0\\n```\"\n    },\n    \"label\": \"input indicative of r markdown code chunk\"\n  },\n\n  // you can also input indicative of code chunk in `r` file by inserting \"# %% \":\n  // specifics in `https://github.com/REditorSupport/vscode-R/pull/662`\n  {\n    \"key\": \"ctrl+shift+i\",\n    \"command\": \"editor.action.insertSnippet\",\n    \"when\": \"editorTextFocus && editorLangId == 'r'\",\n    \"args\": {\n        \"snippet\": \"$LINE_COMMENT %% \"\n    },\n    \"label\": \"input indicative of code chunk\"\n  },\n\n  // open help panel for selection\n  {\n    \"key\": \"f1\",\n    \"command\": \"r.helpPanel.openForSelection\",\n    \"when\": \"editorTextFocus && editorLangId == 'r' || editorTextFocus && editorLangId == 'rmd'\"\n  },\n\n  // read yaml header parameters into `params` when editing an Rmarkdown file\n  {\n    \"key\": \"ctrl+shift+p\",\n    \"command\": \"r.runCommandWithEditorPath\",\n    \"args\": \"params &lt;- rmarkdown::yaml_front_matter(\\\"$$\\\")$params |&gt; lapply(\\\\(x) if (is.list(x)) x$value else x)\",\n    \"when\": \"editorTextFocus && editorLangId == 'rmd'\"\n  },\n\n  // RStudio keybinding for R Package development\n  {\n    \"key\": \"ctrl+shift+b\",\n    \"command\": \"r.install\",\n    \"when\": \"resourceLangId == 'r'\"\n  },\n  {\n    \"key\": \"ctrl+shift+e\",\n    \"command\": \"r.check\",\n    \"when\": \"resourceLangId == 'r'\"\n  },\n  {\n    \"key\": \"ctrl+shift+t\",\n    \"command\": \"r.test\",\n    \"when\": \"resourceLangId == 'r'\"\n  },\n  {\n    \"key\": \"ctrl+shift+d\",\n    \"command\": \"r.document\",\n    \"when\": \"resourceLangId == 'r'\"\n  },\n  {\n    \"key\": \"ctrl+shift+l\",\n    \"command\": \"r.loadAll\",\n    \"when\": \"resourceLangId == 'r'\"\n  },\n  {\n    \"key\": \"ctrl+alt+p\",\n    \"command\": \"r.runCommand\",\n    \"when\": \"editorTextFocus && editorLangId == 'r'\",\n    \"args\": \".vsc.browser(httpgd::hgd_url(), viewer = \\\"Beside\\\")\"\n  }\n]"
+  },
+  {
+    "objectID": "index.html#snippets",
+    "href": "index.html#snippets",
+    "title": "VIII SER - R no VSCODE",
+    "section": "Snippets",
+    "text": "Snippets\nTambém é possível adicionar snippets para facilitar a escrita de códigos repetitivos. Para adicionar snippets, abra o arquivo snippets.json e crie os snippets que desejar. como no exemplo abaixo que cria um snipet de yml para o quarto.\nPara abrir o arquivo snippets.json, pressione Ctrl + Shift + P e digite Preferences: Configure User Snippets e selecione R e depois snippets.json\n\"QMD: Criar uma nova apresentação QMD\": {\n    \"prefix\": \"qmdjs\",\n    \"body\": [\n        \"---\",\n        \"title: Meu Título\",\n        \"author:\",\n        \"  - name: Marcus Ramalho\",\n        \"format:\",\n        \"  revealjs:\",\n        \"      incremental: true\",\n        \"      transition: slide\",\n        \"      background-transition: fade\",\n        \"      theme: night\",\n        \"css: styles.css\",\n        \"date: today\",\n        \"footer: Universidade Federal Fluminense \",\n        \"incremental: true\",\n        \"---\",\n        \"\",\n        \"# ${1:title}\",\n        \"\",\n        \"${2:content}\"\n    ],\n    \"description\": \"Cria um cabeçalho de um arquivo QMD para apresentações em revealjs\"\n},"
+  },
+  {
+    "objectID": "index.html#extensões-recomendadas",
+    "href": "index.html#extensões-recomendadas",
+    "title": "VIII SER - R no VSCODE",
+    "section": "Extensões Recomendadas",
+    "text": "Extensões Recomendadas\n\nCopilot ou tabnine\nQuarto\nLive Share\nMaterial Theme Icons"
+  },
+  {
+    "objectID": "apresentacao.html#marcus-ramalho",
+    "href": "apresentacao.html#marcus-ramalho",
+    "title": "Desbloqueie o Poder do R com VSCode:  Um Guia Prático para Iniciantes e Especialistas",
+    "section": "Marcus Ramalho",
+    "text": "Marcus Ramalho\n\n\n\n\n\n Administração UFF\n Mestrando PPGAd-UFF\n Pesquiso FII’s, Social Listening e desenvolvimento sistemas\n Desenvolvedor R e Python"
+  },
+  {
+    "objectID": "apresentacao.html#tópicos-da-apresentação",
+    "href": "apresentacao.html#tópicos-da-apresentação",
+    "title": "Desbloqueie o Poder do R com VSCode:  Um Guia Prático para Iniciantes e Especialistas",
+    "section": "Tópicos da Apresentação",
+    "text": "Tópicos da Apresentação\n\nPreparação do ambiente de desenvolvimento em R utilizando o Visual Studio Code (VSCode)\nPorque utilizar o VSCode para desenvolvimento em R\n\nVantagens\nDesvantagens\n\nDemonstrar como configurar o ambiente para desenvolvimento em R\n\ninstalação e configuração do R\nlanguage server, Atalhos snippets, extensões, etc.\n\nExtensões úteis"
+  },
+  {
+    "objectID": "apresentacao.html#porque-comecei-a-utilizar-o-vscode-para-desenvolvimento-em-r",
+    "href": "apresentacao.html#porque-comecei-a-utilizar-o-vscode-para-desenvolvimento-em-r",
+    "title": "Desbloqueie o Poder do R com VSCode:  Um Guia Prático para Iniciantes e Especialistas",
+    "section": "Porque comecei a utilizar o VSCode para desenvolvimento em R?",
+    "text": "Porque comecei a utilizar o VSCode para desenvolvimento em R?"
+  },
+  {
+    "objectID": "apresentacao.html#vantagens",
+    "href": "apresentacao.html#vantagens",
+    "title": "Desbloqueie o Poder do R com VSCode:  Um Guia Prático para Iniciantes e Especialistas",
+    "section": "Vantagens",
+    "text": "Vantagens\n\n\n\nIntegração com ferramentas de IA\nColaborção (Live Share)\nMultiplataforma\nExtensões\nsnipets e atalhos\nInteliSense\nIntegração com GitHub\nTerminais Integrados\nSuporte a múltiplas linguagens\nCustomização\nPerformance\nIntegração com Jupyter Notebooks"
+  },
+  {
+    "objectID": "apresentacao.html#desvantagens",
+    "href": "apresentacao.html#desvantagens",
+    "title": "Desbloqueie o Poder do R com VSCode:  Um Guia Prático para Iniciantes e Especialistas",
+    "section": "Desvantagens",
+    "text": "Desvantagens\n\n\n\nPrecisa de configuração\nMenos Intuitivo\nMenos amigável para iniciantes\nTemplates (questionável)\nVisualização de objetos\n\nGráficos\nDataframes\nListas"
+  },
+  {
+    "objectID": "apresentacao.html#mãos-a-obra",
+    "href": "apresentacao.html#mãos-a-obra",
+    "title": "Desbloqueie o Poder do R com VSCode:  Um Guia Prático para Iniciantes e Especialistas",
+    "section": "Mãos a obra",
+    "text": "Mãos a obra"
+  },
+  {
+    "objectID": "apresentacao.html#do-que-precisamos",
+    "href": "apresentacao.html#do-que-precisamos",
+    "title": "Desbloqueie o Poder do R com VSCode:  Um Guia Prático para Iniciantes e Especialistas",
+    "section": "Do que precisamos?",
+    "text": "Do que precisamos?\n\nR Instalado\nVisual Studio Code\nPacote languageserversetup - Recursos de LSP para R permitindo integração com VSCode\nPacote httpgd - Para visualização de gráficos\nSetup dos atalhos\nSetup dos snippets\nExtensões\n\nR\nQMD\nRMD\nCopilot/Tabnine\nPrettier\nLive Share"
+  },
+  {
+    "objectID": "apresentacao.html#interface-do-r-no-vscode",
+    "href": "apresentacao.html#interface-do-r-no-vscode",
+    "title": "Desbloqueie o Poder do R com VSCode:  Um Guia Prático para Iniciantes e Especialistas",
+    "section": "Interface do R no VSCode",
+    "text": "Interface do R no VSCode\n\n\n\n\n\n\n\n\n\nPPGAd Universidade Federal Fluminense\n\n\n\n\n\n\n\n \n\n\nVIII SER - Seminário Internacional de Estatística com R"
+  }
+]

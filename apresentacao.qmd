@@ -1,0 +1,119 @@
+---
+title:  "Desbloqueie o Poder do R com VSCode: <br> Um Guia Prático para Iniciantes e Especialistas"
+author:
+  - name: Marcus Ramalho
+format:
+  revealjs:
+      incremental: false
+      transition: slide
+      background-transition: fade
+      theme: dark
+      header: VIII SER - Seminário Internacional de Estatística com R
+      header-logo: images/ser.png
+      logo: images/uff.png
+      
+filters:
+  - reveal-header
+date: today
+footer: PPGAd Universidade Federal Fluminense
+toc: false
+css: styles.css
+execute: 
+  echo: true
+---
+
+## Marcus Ramalho
+
+::: columns
+::: {.column width="30%"}
+![](images/Marcus.jpg)
+:::
+
+::: {.column width="70%" style="font-size: 30px; padding-top: 50px; text-align: center;"}
+-   {{< bi briefcase >}} Administração UFF
+-   {{< bi journal-code >}} Mestrando PPGAd-UFF
+-   {{< bi search-heart-fill >}} Pesquiso FII's, Social Listening e desenvolvimento sistemas
+-   {{< bi code-slash >}} Desenvolvedor R e Python
+:::
+:::
+
+## Tópicos da Apresentação
+
+-   Preparação do ambiente de desenvolvimento em R utilizando o Visual Studio Code (VSCode)
+-   Porque utilizar o VSCode para desenvolvimento em R
+    -   Vantagens
+    -   Desvantagens
+-   Demonstrar como configurar o ambiente para desenvolvimento em R
+    -   instalação e configuração do R
+    -   language server, Atalhos snippets, extensões, etc.
+-   Extensões úteis
+
+## Porque comecei a utilizar o VSCode para desenvolvimento em R?
+
+![](images/paste-1.png){fig-align="center" width="519"}
+
+## Vantagens
+
+::: columns
+::: {.column width="40%"}
+-   **Integração com ferramentas de IA**
+-   **Colaborção (Live Share)**
+-   **Multiplataforma**
+-   **Extensões**
+-   **snipets e atalhos**
+-   **InteliSense**
+-   **Integração com GitHub**
+-   **Terminais Integrados**
+-   **Suporte a múltiplas linguagens**
+-   **Customização**
+-   **Performance**
+-   **Integração com Jupyter Notebooks**
+:::
+
+::: {.column width="60%"}
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3R1YzA1N25mcHJzc285eGV5M3AwYjBrNG80OGZpcngwdnI3M2x6NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vETeJc11yHAas/giphy.webp)
+:::
+:::
+
+## Desvantagens
+
+::: columns
+::: {.column width="40%"}
+-   **Precisa de configuração**
+-   **Menos Intuitivo**
+-   **Menos amigável para iniciantes**
+-   **Templates (questionável)**
+-   **Visualização de objetos**
+    -   Gráficos
+    -   Dataframes
+    -   Listas
+:::
+
+::: {.column width="60%"}
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXRoc2pjcXFscnowbWtsb296aWljdjgxdHJkODRrMml2MTA0ZzQ1ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zrdUjl6N99nLq/200.webp)
+:::
+:::
+
+## Mãos a obra
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExanF0N2NjOXg3azVwZDRkNHptN210MnIwM2ttZnBhNHFqZ3QxZnlvciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ToMjGpys6SYsvUSE0JW/giphy.webp){fig-align="center" width="735"}
+
+## Do que precisamos?
+
+-   R Instalado
+-   Visual Studio Code
+-   Pacote `languageserversetup` - Recursos de LSP para R permitindo integração com VSCode
+-   Pacote `httpgd` - Para visualização de gráficos
+-   Setup dos atalhos
+-   Setup dos snippets
+-   Extensões
+    -   R
+    -   QMD
+    -   RMD
+    -   Copilot/Tabnine
+    -   Prettier
+    -   Live Share
+
+## Interface do R no VSCode
+
+![](images/paste-3.png){fig-align="center" width="541"}
